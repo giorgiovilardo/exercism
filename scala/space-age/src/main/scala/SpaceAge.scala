@@ -1,17 +1,15 @@
 object SpaceAge {
-  def onEarth(age: Double): Double = age / 31557600.0
+  private val EARTH_SECONDS = 31_557_600.0
 
-  def onVenus(age: Double): Double = onEarth(age) / 0.61519726
+  private def calculate(orbitPeriod: Double) =
+    (seconds: Double) => seconds / EARTH_SECONDS / orbitPeriod
 
-  def onMercury(age: Double): Double = onEarth(age) / 0.2408467
-
-  def onMars(age: Double): Double = onEarth(age) / 1.8808158
-
-  def onJupiter(age: Double): Double = onEarth(age) / 11.862615
-
-  def onSaturn(age: Double): Double = onEarth(age) / 29.447498
-
-  def onUranus(age: Double): Double = onEarth(age) / 84.016846
-
-  def onNeptune(age: Double): Double = onEarth(age) / 164.79132
+  val onEarth: Double => Double = calculate(1.0)
+  val onMercury: Double => Double = calculate(0.2408467)
+  val onVenus: Double => Double = calculate(0.61519726)
+  val onMars: Double => Double = calculate(1.8808158)
+  val onJupiter: Double => Double = calculate(11.862615)
+  val onSaturn: Double => Double = calculate(29.447498)
+  val onUranus: Double => Double = calculate(84.016846)
+  val onNeptune: Double => Double = calculate(164.79132)
 }
