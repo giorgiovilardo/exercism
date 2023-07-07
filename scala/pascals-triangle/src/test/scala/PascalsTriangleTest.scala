@@ -10,28 +10,23 @@ class PascalsTriangleTest extends AnyFunSuite with Matchers {
   }
 
   test("single row") {
-    pending
     PascalsTriangle.rows(1) should be(List(List(1)))
   }
 
   test("two rows") {
-    pending
     PascalsTriangle.rows(2) should be(List(List(1), List(1, 1)))
   }
 
   test("three rows") {
-    pending
     PascalsTriangle.rows(3) should be(List(List(1), List(1, 1), List(1, 2, 1)))
   }
 
   test("four rows") {
-    pending
     PascalsTriangle.rows(4) should be(
       List(List(1), List(1, 1), List(1, 2, 1), List(1, 3, 3, 1)))
   }
 
   test("five rows") {
-    pending
     PascalsTriangle.rows(5) should be(
       List(List(1),
            List(1, 1),
@@ -41,7 +36,6 @@ class PascalsTriangleTest extends AnyFunSuite with Matchers {
   }
 
   test("six rows") {
-    pending
     PascalsTriangle.rows(6) should be(
       List(List(1),
            List(1, 1),
@@ -52,7 +46,6 @@ class PascalsTriangleTest extends AnyFunSuite with Matchers {
   }
 
   test("ten rows") {
-    pending
     PascalsTriangle.rows(10) should be(
       List(
         List(1),
@@ -69,7 +62,6 @@ class PascalsTriangleTest extends AnyFunSuite with Matchers {
   }
 
   test("negative rows") {
-    pending
     PascalsTriangle.rows(-1) should be(List())
   }
 }
