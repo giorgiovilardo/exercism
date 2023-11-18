@@ -1,17 +1,21 @@
 class LogLineParser
   def initialize(line)
+    # @type [String]
     @line = line
+    match = @line.match(/\[(?<log_level>.+)\]:\s(?<message>.+)/)
+    @message = match[:message].strip
+    @log_level = match[:log_level].strip.downcase
   end
 
   def message
-    raise 'Please implement the LogLineParser#message method'
+    @message
   end
 
   def log_level
-    raise 'Please implement the LogLineParser#log_level method'
+    @log_level
   end
 
   def reformat
-    raise 'Please implement the LogLineParser#reformat method'
+    "#{@message} (#{@log_level})"
   end
 end
